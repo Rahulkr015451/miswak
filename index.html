@@ -3,27 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Miswak Multi Speciality Dental Care | Advanced Dental Care</title>
-  <meta name="description" content="Miswak Multi Speciality Dental Care offers advanced dental treatments with a gentle touch. Book your appointment today at +91-7288947192." />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="theme-color" content="#020617" />
+
+  <title>Miswak Multi Speciality Dental Care | Advanced 3D Dental Care</title>
+  <meta name="description" content="Miswak Multi Speciality Dental Care offers modern, advanced dental treatments with a gentle touch. Experience precision dentistry, laser root canals, and smile design. Call +91-7288947192." />
+
+  <!-- Open Graph & Social Sharing Production Metadata -->
+  <meta property="og:title" content="Miswak Multi Speciality Dental Care | Advanced 3D Dental Care" />
+  <meta property="og:description" content="State-of-the-art painless dentistry, precision implants & cosmetic smile design in Tumakuru." />
+  <meta property="og:image" content="assets/images/dentist.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Three.js for 3D Interactive Tooth Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header id="navbar" class="navbar" role="banner">
     <div class="navbar-inner">
       <a href="#home" class="brand" aria-label="Miswak Home">
-        <img src="logo.png" alt="Miswak Dental Care logo" class="brand-logo" />
+        <img src="assets/images/logo.png" alt="Miswak Dental Care logo" class="brand-logo" />
         <div class="brand-text">
           <span class="brand-name">Miswak</span>
           <span class="brand-sub">Multi Speciality Dental Care</span>
         </div>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home" class="nav-link active">Home</a>
         <a href="#doctor" class="nav-link">Doctor</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="#testimonials" class="nav-link">Reviews</a>
@@ -40,6 +56,7 @@
     </div>
     <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
       <nav>
+        <a href="#home" class="mobile-nav-link">Home</a>
         <a href="#doctor" class="mobile-nav-link">Doctor</a>
         <a href="#services" class="mobile-nav-link">Services</a>
         <a href="#testimonials" class="mobile-nav-link">Reviews</a>
@@ -52,45 +69,67 @@
     </div>
   </header>
 
+  <!-- ===================== HERO SECTION WITH 3D INTERACTIVE TOOTH ===================== -->
   <section id="home" class="hero" aria-label="Hero section">
-    <div class="hero-parallax" id="hero-parallax" role="img" aria-label="Modern dental clinic interior"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
+    <!-- Atmospheric Luxury Studio Background -->
+    <div class="hero-bg-canvas" aria-hidden="true">
+      <div class="hero-studio-glow"></div>
+      <div class="hero-watermark" aria-hidden="true">MISWAK</div>
+      <div class="hero-floor-reflection"></div>
+    </div>
+
+    <!-- 3D Tooth WebGL Canvas Container -->
+    <div class="hero-3d-wrapper" id="hero-3d-wrapper">
+      <canvas id="tooth-3d-canvas" class="tooth-3d-canvas" aria-label="Interactive 3D Glass Molar Tooth Model"></canvas>
+    </div>
+
+
+
+    <!-- Central Hero Dynamic Typography & Content Layer -->
     <div class="hero-content">
       <div class="hero-badge reveal-up">
         <span class="pulse-dot" aria-hidden="true"></span>
-        Accepting New Patients
+        <span>Accepting New Patients &bull; Advanced 3D Dental Care</span>
       </div>
+
       <h1 class="hero-heading reveal-up">
         Miswak Multi Speciality<br />
         <em>Dental Care</em>
       </h1>
-      <p class="hero-sub reveal-up">
-        <span class="hero-clinic-name">Advanced Dental Care with a Gentle Touch</span>
-      </p>
+
+
+
+      <!-- Action Buttons -->
       <div class="hero-actions reveal-up">
-        <a href="tel:+917288947192" class="btn-primary" id="hero-call-btn">
+        <a href="https://wa.me/917288947192?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Miswak%20Multi%20Speciality%20Dental%20Care." class="btn-primary btn-glow" id="hero-book-btn" target="_blank" rel="noopener noreferrer">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          Call Now
+          Book Consultation
         </a>
         <a href="#services" class="btn-secondary" id="hero-services-btn">
-          View Services
+          Explore Services
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
+        <a href="tel:+917288947192" class="btn-secondary btn-phone-quick" id="hero-call-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          +91-7288947192
+        </a>
       </div>
-      <div class="hero-stats reveal-up" aria-label="Clinic statistics">
-        <div class="stat-item">
-          <span class="stat-num" data-target="5000">0</span><span class="stat-num">+</span>
-          <span class="stat-label">Happy Patients</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num" data-target="12">0</span><span class="stat-num">+</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
+
+      <!-- Reference Style Direct CTA Button -->
+      <div class="hero-reference-cta reveal-up">
+        <a href="https://wa.me/917288947192?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20Miswak%20Multi%20Speciality%20Dental%20Care." class="btn-enter-appointment" target="_blank" rel="noopener noreferrer">
+          <span>ENTER APPOINTMENT</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
       </div>
+
+
     </div>
-    <a href="#services" class="scroll-cue" aria-label="Scroll down to services">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+
+    <!-- Scroll Cue Indicator -->
+    <a href="#doctor" class="scroll-cue" aria-label="Scroll down to doctor section">
+      <span class="scroll-cue-text">Explore Clinic</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
     </a>
   </section>
 
@@ -100,7 +139,7 @@
 
       <div class="doctor-image-col reveal-up">
         <div class="doctor-portrait-wrap">
-          <img src="dentist.png" alt="Dr. Shadab — BDS MDS, Conservative and Endodontist" class="doctor-portrait" loading="lazy" />
+          <img src="assets/images/dentist.png" alt="Dr. Shadab — BDS MDS, Conservative and Endodontist" class="doctor-portrait" loading="lazy" />
           <div class="doctor-portrait-ring" aria-hidden="true"></div>
           <div class="doctor-portrait-dot" aria-hidden="true"></div>
         </div>
@@ -166,7 +205,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:0">
           <div class="svc-img-wrap">
-            <img src="Teeth Whitening.jpg" alt="Teeth Whitening" class="svc-img" loading="lazy" />
+            <img src="assets/images/Teeth Whitening.jpg" alt="Teeth Whitening" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -178,7 +217,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:1">
           <div class="svc-img-wrap">
-            <img src="Smile Design.jpg" alt="Dental Bonding" class="svc-img" loading="lazy" />
+            <img src="assets/images/Smile Design.jpg" alt="Dental Bonding" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -190,7 +229,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:2">
           <div class="svc-img-wrap">
-            <img src="Dental X- Ray.jpg" alt="Dental Check-ups" class="svc-img" loading="lazy" />
+            <img src="assets/images/Dental X- Ray.jpg" alt="Dental Check-ups" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -202,7 +241,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:3">
           <div class="svc-img-wrap">
-            <img src="Smile Design.jpg" alt="Cosmetic Procedures" class="svc-img" loading="lazy" />
+            <img src="assets/images/Smile Design.jpg" alt="Cosmetic Procedures" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -214,7 +253,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:4">
           <div class="svc-img-wrap">
-            <img src="Implants.jpg" alt="Dental Implants" class="svc-img" loading="lazy" />
+            <img src="assets/images/Implants.jpg" alt="Dental Implants" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -226,7 +265,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:5">
           <div class="svc-img-wrap">
-            <img src="Dentures.jpg" alt="Dentures and Bridges" class="svc-img" loading="lazy" />
+            <img src="assets/images/Dentures.jpg" alt="Dentures and Bridges" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -238,7 +277,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:6">
           <div class="svc-img-wrap">
-            <img src="Tooth Removal.jpg" alt="Extractions" class="svc-img" loading="lazy" />
+            <img src="assets/images/Tooth Removal.jpg" alt="Extractions" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -250,7 +289,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:7">
           <div class="svc-img-wrap">
-            <img src="Teeth Fillings.jpg" alt="Fillings and Sealants" class="svc-img" loading="lazy" />
+            <img src="assets/images/Teeth Fillings.jpg" alt="Fillings and Sealants" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -262,7 +301,7 @@
 
         <article class="svc-card card-stagger" tabindex="0" style="--stagger:8">
           <div class="svc-img-wrap">
-            <img src="Dental Surgery.jpg" alt="Oral Surgery" class="svc-img" loading="lazy" />
+            <img src="assets/images/Dental Surgery.jpg" alt="Oral Surgery" class="svc-img" loading="lazy" />
             <div class="svc-glass-overlay" aria-hidden="true"></div>
           </div>
           <div class="svc-body">
@@ -482,7 +521,7 @@
         <!-- Brand Column -->
         <div class="footer-col footer-col-brand">
           <a href="#home" class="footer-brand-link" aria-label="Back to top">
-            <img src="logo.png" alt="Miswak Dental Care logo" class="brand-logo footer-brand-logo" />
+            <img src="assets/images/logo.png" alt="Miswak Dental Care logo" class="brand-logo footer-brand-logo" />
             <div class="brand-text">
               <span class="footer-brand-name">Miswak</span>
               <span class="footer-brand-sub">Multi Speciality Dental Care</span>
